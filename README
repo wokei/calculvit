@@ -1,1 +1,37 @@
-le readme du tutoriel
+le readme du projet : 
+
+pour ajouter un truc (après la première fois) : 
+  git add <fichier>
+  git commit -m 'le commentaire explicatif'
+      // pas sur de ça : git remote add origin git@github.com:didjoman/calculvit.git
+  git push -u origin master
+(chez moi origin c'est "machin" parceque j'arrivais pas avec "origin" donc voila ... xD !
+
+
+
+---------------------------------------------------------------
+Global setup:
+
+ Set up git
+  git config --global user.name "Your Name"
+  git config --global user.email alexrupp@free.fr
+      
+
+Next steps:
+
+  mkdir calculvit
+  cd calculvit
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:didjoman/calculvit.git
+  git push -u origin master
+      
+
+Existing Git Repo?
+
+  cd existing_git_repo
+  git remote add origin git@github.com:didjoman/calculvit.git
+  git push -u origin master
+----------------------------------------------------------------      
