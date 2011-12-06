@@ -1,0 +1,97 @@
+\documentclass[a4paper,11pt]{report} %le document est du type Report, feuille a4 et la police est en 11pt par default.
+\usepackage[utf8]{inputenc} %l'encodagge du texte est latin1
+\usepackage[frenchb]{babel} % on ecrit en français (babel est un package)
+\usepackage[T1]{fontenc}  %paquet pour la police
+\usepackage{lmodern} %paquet pour la police
+\usepackage{titlesec} % pour supprimer le 'chapitre' en haut (va avec une command plus bas)
+\renewcommand\thesection{\Roman{section}} %\Roman{section}
+ % \Roman indique que l'on veut utiliser des I, II, III pour numeroter les sections
+% autres types : arabic (1,2,3), alph (a, b,c), roman (i, ii, iii), Roman (I, II, III)
+\renewcommand\thesubsection{\Roman{section} . \arabic{subsection}} %\
+
+
+
+
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}  %supprime le ``chapitre en haut''
+
+\title{Cahier des charges de Calculvit'}
+\author{Jordan \bsc{Piorun}, Alexandre \bsc{Rupp}}
+\date{1 Décembre 2011}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+\section{Contexte}
+Ce logiciel doit être réalisé dans le cadre du projet de fin de semestre du module d'initiation à la
+programmation et l'algorithmique du DUT Informatique de l'IUT « A » de l'Université Lille 1. Le
+contexte général de l'ensemble des projets est celui des applications ludo-pédagogiques, c'est-à-dire
+de logiciels destinés à l'apprentissage de certaines notions par l'utilisation d'une application ludique.
+Ce travail est réalisé en coopération avec l'école maternelle et primaire Pierre et Marie Curie située
+à Villeneuve d'Ascq.
+
+
+\section{But du projet}
+
+Le but du projet \textbf{Calculvit} est de fournir à des élèves de niveau CP, CE1 ou CE2, un support logiciel leur permettant de s’entraîner en toute autonomie au calcul mental.\\
+Le principe du logiciel est de proposer une opération à trou, à réaliser en un temps réduit. Celle-ci étant plus ou moins longue et pouvant être composée de différents opérateurs.\\
+Le coté ludique de l'exercice repose sur le temps réduit, l’enchaînement des exercices, et la possibilité pour l'enfant de visualiser sa progression exercice après exercice grâce à un taux de réussite global. 
+
+\section{Description de la demande}
+\subsection{Objectifs}
+Le but du logiciel est d'aider et d'habituer l'enfant à faire du calcul mental. Pour ce faire, différents mécanismes doivent être mis en place pour captiver son attention et l'inciter à continuer l'exercice. Par exemple, le fait que chaque nouveau calcul soit chronométré, doit permettre de renouveler l'attention de l'enfant. Ensuite, la possibilité de visualiser son score sur un tableau des records, doit inciter l'élève à vouloir s'améliorer.
+
+\subsection{Fonctions du produit}
+
+Le but du projet est de construire un logiciel ludo-pédagogique à destinations d'enfant de CP, CE1 ou CE2. Le logiciel se présente sous la forme d'une activité principale dans laquelle l'enfant doit compléter des opérations où l'un des opérateurs ou l'un des termes est manquant. L'écran présente donc une opérations à termes (ou opérateurs) manquants et l'enfant doit entrer l'élément manquant dans une zone de saisie. L'enfant doit saisir la bonne entrée, dans un temps imparti et l'ordinateur lui indique ensuite si il a trouvé la bonne réponse ou pas. \\
+
+En terme de progression, on peut envisager différentes options à sélectionner dans un menu, comme par exemple le \textbf{temps adaptatif} qui consiste en une diminution (ou augmentation) du temps imparti en fonction des facilités de l'utilisateur. On peut également créer une option pour que la \textbf{taille des opérations} augmente au cours de l'exercice, ou encore offrir la possibilité de \textbf{choisir un certain type d\'opérateur} ou de \textbf{combiner plusieurs types d\'opérateur} au saint d'une opération. \\
+
+
+La session d'exercice est paramétrable en choisissant un niveau : CP, CE1, ou CE2, puis en affinant le règlage des paramètres (nombre d'opérations par exercice, tailles des opérations, nombre d'operateurs, combinaison d'opérateurs, temps ou difficulté adaptative).
+
+\subsection{Critère de validation}
+
+Nous allons ici résumer les différentes catégories de fonctions de ce logiciel selon l'avancée du projet.\\
+
+\subsection{Fonctions minimales:}
+Le logiciel doit au minimum présenter un mode pré-configuré pour des élèves de CP, un autre pour ceux de CE1 et un autre pour les CE2. L'utilisateur pourra cocher la case correspondant à son choix via un menu.\\
+Une fois le choix effectué, une série se lancera et l'utilisateur devra saisir le résultat du calcul avant la fin du temps imparti.\\
+Les opérations présentées à l'élève seront de difficulté variable et non paramétrables (fixées au départ en fonction du niveau choisit et basé sur les programmes publiés par l'éducation nationale).
+De plus, le nombre d'opérations par série sera fixé.
+
+D'un point de vue ergonomique, le programme sera en mode texte, avec une ligne pour l'affichage de l'opération, et la suivant réservée à la saisie.
+Enfin, après chaque saisie, l'utilisateur verra la bonne réponse et son nombre de points.
+
+Au fur et à mesure de son avancée dans la série, le temps laissé à l'élève diminue selon sa vitesse de réponse afin de s'approcher au mieux de son niveau.\\
+\`A la fin de la série, l'élève voit son temps total, et son nombre d'erreur.\\
+
+\subsection{Fonctions souhaitables}
+
+Ensuite, il serait souhaitable pour l'enseignant de pouvoir régler le nombre d'opérations par exercice, le temps imparti, ou encore les opérateurs qui seront utilisés  durant l'activité.\\
+Il y aurait donc un menu, ou un fichier csv permettant à l'enseignant de définir une configuration particulière.\\ \\
+
+Du point de vue ergonomique, l'opération à compléter serait en mode graphique, avec la zone de saisie intégrée à l'opération. \\
+
+\subsection{Fonctions demandées}
+
+Le logiciel présente plus de paramétrabilité, notamment grâce à un menu dans lequel l'enseignant pourra choisir :\\
+
+\begin{itemize}
+\item[-] Le temps imparti
+\item[-] les opérations utilisées
+\item[-] le nombre d'opérations par exercice
+\item[-] le nombre d'opérateurs par opération
+\item[-] le fait que l'on puisse combiner plusieurs opérateurs au sein d'une même opération
+\item[-] niveau de temps adaptatif (le temps diminue en fonction des performances de l'élève durant la série)
+\item[-] niveau de réflexion adaptatif (le nombre d'opérateurs augmente en fonction des performances de l'élève)
+\end{itemize}
+
+\subsection{Fonctions avancées}
+
+Le logiciel est capable de mémoriser le nom de l'utilisateur et ses résultats antérieurs et de résumer sa progression avec une barre de réussite. Lorsque le logiciel démarre l'utilisateur saisit son nom et si son nom est déjà présent, il est chargé, ainsi que ses résultats antérieurs. les informations sur son parcours sont accessibles dans un menu. \\
+
+Enfin, on peut mettre en place une table des records.
+
+\end{document}
