@@ -14,7 +14,8 @@ pour ajouter un truc (après la première fois) :
   git add <fichier>
   git commit -m 'le commentaire explicatif'
       // pas sur de ça : git remote add origin git@github.com:didjoman/calculvit.git
-  git push -u origin master
+git pull // obligé avant un push, sert à mettre à jour ses infos.
+git push -u origin master
 (chez moi origin c'est "machin" parceque j'arrivais pas avec "origin" donc voila ... xD !
 
 ---------------------------------------------------------------
